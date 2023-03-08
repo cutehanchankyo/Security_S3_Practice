@@ -20,4 +20,6 @@ public class BoardRequest {
     private String name;
     private String title;
     private String content;
+
+
 }

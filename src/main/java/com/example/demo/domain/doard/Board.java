@@ -14,6 +14,8 @@ import static javax.persistence.GenerationType.IDENTITY;
 @Getter
 @Entity
 @NoArgsConstructor
+@Builder
+@AllArgsConstructor
 public class Board {
 
     @Id
@@ -33,5 +35,9 @@ public class Board {
     @Column(name = "board_content")
     private String content;
 
-
+    public void update(String name, String title, String content){
+        this.name=name;
+        this.title=title;
+        this.content=content;
+    }
 }
