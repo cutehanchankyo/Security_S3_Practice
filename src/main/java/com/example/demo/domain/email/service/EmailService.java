@@ -26,7 +26,6 @@ public class EmailService {
     private final JavaMailSender javaMailSender;
 
 
-    @Override
     public void execute(String email, String authKey) {
         Email emailAuth = emailRepository.findById(email).orElseThrow(() -> new UserNotFoundException("유저를 찾을 수 없습니다"));
         checkAuthKey(emailAuth, authKey);
