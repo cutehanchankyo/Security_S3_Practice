@@ -1,6 +1,6 @@
 package com.example.demo.domain.user.entity;
 
-import com.example.demo.domain.user.enuns.Role;
+import com.example.demo.domain.user.enums.Role;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
