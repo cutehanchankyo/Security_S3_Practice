@@ -1,4 +1,4 @@
-package com.example.demo.domain.user.enuns;
+package com.example.demo.domain.user.enums;
 
 public enum Role {
     ADMIN,
