@@ -1,5 +1,8 @@
 package com.example.demo.global.security;
 
+import com.example.demo.global.filter.JwtRequestFilter;
+import com.example.demo.global.security.handler.CustomAccessDeniedHandler;
+import com.example.demo.global.security.handler.CustomAuthenticationEntryPointHandler;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

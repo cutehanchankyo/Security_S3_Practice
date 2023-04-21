@@ -1,46 +1,19 @@
 package com.example.demo.global.security.auth;
 
-import com.example.demo.domain.user.entity.User;
-import lombok.RequiredArgsConstructor;
+import com.example.demo.domain.user.repository.UserRepository;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.transaction.annotation.Transactional;
 
-@RequiredArgsConstructor
-public class AuthDetailsService implements UserDetails {
-    private final User user;
-
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
-    }
+public class AuthDetailsService implements UserDetailsService {
+    private final UserRepository userRepository;
 
     @Override
-    public String getPassword() {
-        return user.getPassword();
+    @Transactional(rollbackFor = Exception.class)
+    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
+        return userRepository.findUserByEmail(email)
+                .map(AuthDetails::new)
+                .orElseThrow(()-> new UsernameNotFoundException("유저를 찾을 수 없습니다"));
     }
-
-    @Override
-    public String getUsername() {
-        return user.getEmail();
-    }
-
-    @Override
-    public boolean isAccountNonExpired() {
-        return false;
-    }
-
-    @Override
-    public boolean isAccountNonLocked() {
-        return false;
-    }
-
-    @Override
-    public boolean isCredentialsNonExpired() {
-        return false;
-    }
-
-    @Override
-    public boolean isEnabled() {
-        return false;
-    }
-}
 }
