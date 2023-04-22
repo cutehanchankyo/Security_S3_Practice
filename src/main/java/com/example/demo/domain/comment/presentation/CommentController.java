@@ -1,6 +1,7 @@
 package com.example.demo.domain.comment.presentation;
 
 import com.example.demo.domain.comment.presentation.dto.request.CreateCommentReqDto;
+import com.example.demo.domain.comment.presentation.dto.request.ModifyCommentReqDto;
 import com.example.demo.domain.comment.service.CreateCommentService;
 import com.example.demo.domain.comment.service.DeleteCommentService;
 import com.example.demo.domain.comment.service.ModifyCommentService;
@@ -23,5 +24,11 @@ public class CommentController {
     public ResponseEntity<Void> createComment(@PathVariable Long postId, @RequestBody @Valid CreateCommentReqDto createCommentReqDto) {
         createCommentService.execute(postId, createCommentReqDto);
         return new ResponseEntity<>(HttpStatus.CREATED);
+    }
+
+    @PatchMapping("/{commentId}")
+    public ResponseEntity<Void> modifyComment(@PathVariable Long commentId, @RequestBody @Valid ModifyCommentReqDto modifyCommentReqDto) {
+        modifyCommentService.execute(commentId, modifyCommentReqDto);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 }
