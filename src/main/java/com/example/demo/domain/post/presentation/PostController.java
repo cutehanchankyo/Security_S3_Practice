@@ -2,6 +2,7 @@ package com.example.demo.domain.post.presentation;
 
 import com.example.demo.domain.post.presentation.dto.request.CreatePostRequest;
 import com.example.demo.domain.post.presentation.dto.request.ModifyPostRequest;
+import com.example.demo.domain.post.presentation.dto.response.PostListResDto;
 import com.example.demo.domain.post.service.CreatePostService;
 import com.example.demo.domain.post.service.ModifyPostService;
 import com.example.demo.domain.post.service.PostListService;
@@ -41,6 +42,10 @@ public class PostController {
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
-
+    @GetMapping
+    public ResponseEntity<List<PostListResDto>> findAllPost() {
+        List<PostListResDto> results = postListService.execute();
+        return new ResponseEntity<>(results, HttpStatus.OK);
+    }
 
 }
