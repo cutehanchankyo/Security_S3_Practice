@@ -46,4 +46,4 @@ public class AuthDetails implements UserDetails {
         return false;
     }
 }
-}
+
