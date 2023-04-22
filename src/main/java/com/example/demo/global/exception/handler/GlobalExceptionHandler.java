@@ -3,6 +3,7 @@ package com.example.demo.global.exception.handler;
 import com.example.demo.domain.email.exception.AuthCodeMismatchException;
 import com.example.demo.domain.email.exception.EmailSendFailedException;
 import com.example.demo.domain.email.exception.ManyRequestEmailAuthException;
+import com.example.demo.domain.post.exception.PostNotFoundException;
 import com.example.demo.domain.user.exception.*;
 import com.example.demo.global.exception.ErrorResponse;
 import com.example.demo.global.exception.exceptioncollerction.TokenExpirationException;
