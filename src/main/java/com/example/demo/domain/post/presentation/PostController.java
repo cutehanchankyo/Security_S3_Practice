@@ -1,6 +1,7 @@
 package com.example.demo.domain.post.presentation;
 
 import com.example.demo.domain.post.presentation.dto.request.CreatePostRequest;
+import com.example.demo.domain.post.presentation.dto.request.ModifyPostRequest;
 import com.example.demo.domain.post.service.CreatePostService;
 import com.example.demo.domain.post.service.ModifyPostService;
 import com.example.demo.domain.post.service.PostListService;
@@ -27,4 +28,11 @@ public class PostController {
         createPostService.execute(createPostRequest);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
+
+    @PatchMapping("/{id}")
+    public ResponseEntity<Void> modifyPost(@PathVariable Long id,  @RequestBody @Valid ModifyPostRequest modifyPostRequest) {
+        modifyPostService.execute(id, modifyPostRequest);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
+
 }
