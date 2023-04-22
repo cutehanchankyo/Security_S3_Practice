@@ -1,3 +1,3 @@
 # Security_S3_Practice
 
-S3 Board연습장
+사진 업로드 S3연습장
