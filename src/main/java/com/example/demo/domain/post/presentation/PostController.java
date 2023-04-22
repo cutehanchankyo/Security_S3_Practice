@@ -35,4 +35,12 @@ public class PostController {
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> removePost(@PathVariable Long id) {
+        removePostService.execute(id);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
+
+
+
 }
