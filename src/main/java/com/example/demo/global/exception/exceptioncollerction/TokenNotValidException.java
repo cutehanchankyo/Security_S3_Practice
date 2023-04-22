@@ -14,4 +14,4 @@ public class TokenNotValidException extends RuntimeException{
         this.errorCode = ErrorCode.TOKEN_NOT_VALID;
     }
 }
-}
+
