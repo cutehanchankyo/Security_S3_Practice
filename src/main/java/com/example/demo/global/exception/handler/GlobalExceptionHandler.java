@@ -1,5 +1,7 @@
 package com.example.demo.global.exception.handler;
 
+import com.example.demo.domain.comment.exception.CommentNotFoundException;
+import com.example.demo.domain.comment.exception.CommentUserMismatchException;
 import com.example.demo.domain.email.exception.AuthCodeMismatchException;
 import com.example.demo.domain.email.exception.EmailSendFailedException;
 import com.example.demo.domain.email.exception.ManyRequestEmailAuthException;
