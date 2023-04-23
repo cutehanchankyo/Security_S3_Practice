@@ -16,7 +16,7 @@ import javax.persistence.Id;
 @ToString
 @RedisHash(value = "refeshToken")
 public class RefreshToken {
-    @Indexed
+
     private String email;
 
     @Id
